@@ -9,11 +9,11 @@ export class RecipeApiService {
   apikey: string = "bd777770e78b145d634b5bf922500535";
   constructor(private http: HttpClient) {}
 
-  getEdamamData() {
+  getEdamamData(searchTerm: string) {
     return this.http.get(
-      `https://api.edamam.com/search?q=chicken&app_id=${this.appid}&app_key=${
-        this.apikey
-      }&from=0&to=3&calories=591-722&health=alcohol-free`
+      `https://api.edamam.com/search?q=${searchTerm}&app_id=${
+        this.appid
+      }&app_key=${this.apikey}&from=0&to=3&calories=591-722&health=alcohol-free`
     );
   }
 }
