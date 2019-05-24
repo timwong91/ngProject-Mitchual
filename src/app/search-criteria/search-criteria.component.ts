@@ -7,7 +7,7 @@ import { RecipeApiService } from "../recipe-api.service";
   styleUrls: ["./search-criteria.component.css"]
 })
 export class SearchCriteriaComponent implements OnInit {
-  recipeData: any[];
+  recipeData: any[] = [];
   constructor(private recipeApiService: RecipeApiService) {}
 
   ngOnInit() {}
