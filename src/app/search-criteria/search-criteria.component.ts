@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { RecipeApiService } from "../recipe-api.service";
 
 @Component({
   selector: "search-criteria",
@@ -6,7 +7,17 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./search-criteria.component.css"]
 })
 export class SearchCriteriaComponent implements OnInit {
-  constructor() {}
+  recipeData: any[];
+  constructor(private recipeApiService: RecipeApiService) {}
 
   ngOnInit() {}
+
+  searchRecipe(form) {
+    this.recipeApiService
+      .getEdamamData(form.value.searchTerm)
+      .subscribe(response => {
+        this.recipeData = response["hits"];
+        console.log(this.recipeData);
+      });
+  }
 }
