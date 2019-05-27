@@ -14,7 +14,12 @@ export class SearchCriteriaComponent implements OnInit {
 
   searchRecipe(form) {
     this.recipeApiService
-      .getEdamamData(form.value.searchTerm)
+      .getEdamamData(
+        form.value.searchTerm,
+        form.value.caloriesMin,
+        form.value.caloriesMax,
+        form.value.cuisineType
+      )
       .subscribe(response => {
         this.recipeData = response["hits"];
         console.log(this.recipeData);

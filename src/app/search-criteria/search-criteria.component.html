@@ -1,5 +1,11 @@
 <form #recipeForm="ngForm" (ngSubmit)="searchRecipe(recipeForm)">
   <label for="">Search Recipe: </label>
   <input type="text" ngModel name="searchTerm" />
+  <label for="">Calories Min</label>
+  <input type="text" ngModel name="caloriesMin" />
+  <label for="">Calories Max</label>
+  <input type="text" ngModel name="caloriesMax" />
+  <label for="">Cuisine Type: </label>
+  <input type="text" ngModel name="cuisineType" />
   <button>Search Recipe</button>
 </form>
