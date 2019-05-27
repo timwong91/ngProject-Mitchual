@@ -13,15 +13,15 @@ export class RecipeApiService {
   getEdamamData(
     searchTerm: string,
     caloriesMin: number,
-    caloriesMax: number,
-    cuisineType: string
+    caloriesMax: number
+    // cuisineType: string
   ) {
     return this.http.get(
       `https://api.edamam.com/search?q=${searchTerm}&app_id=${
         this.appid
       }&app_key=${
         this.apikey
-      }&from=0&to=3&calories=${caloriesMin}-${caloriesMax}&cuisineType=${cuisineType}`
+      }&from=0&to=3&calories=${caloriesMin}-${caloriesMax}`
     );
   }
 }
