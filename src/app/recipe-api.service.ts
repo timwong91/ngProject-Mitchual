@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { RecipeInfo } from "./recipe-info";
 
 @Injectable({
   providedIn: "root"
@@ -10,18 +11,13 @@ export class RecipeApiService {
 
   constructor(private http: HttpClient) {}
 
-  getEdamamData(
-    searchTerm: string,
-    caloriesMin: number,
-    caloriesMax: number
-    // cuisineType: string
-  ) {
+  getEdamamData({ searchTerm, caloriesMin, caloriesMax, diet }: RecipeInfo) {
     return this.http.get(
       `https://api.edamam.com/search?q=${searchTerm}&app_id=${
         this.appid
       }&app_key=${
         this.apikey
-      }&from=0&to=3&calories=${caloriesMin}-${caloriesMax}`
+      }&from=0&to=3&?calories=${caloriesMin}-${caloriesMax}&?diet=${diet}`
     );
   }
 }

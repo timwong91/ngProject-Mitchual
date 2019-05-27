@@ -7,15 +7,31 @@ import { AppComponent } from "./app.component";
 import { SearchCriteriaComponent } from "./search-criteria/search-criteria.component";
 import { RecipeListComponent } from "./recipe-list/recipe-list.component";
 import { FavoritesPageComponent } from "./favorites-page/favorites-page.component";
+import { RouterModule, Routes } from "@angular/router";
+import { RecipeComponent } from "./recipe/recipe.component";
+
+const appRoutes: Routes = [
+  { path: "", redirectTo: "/home", pathMatch: "full" },
+  { path: "home", component: SearchCriteriaComponent },
+  { path: "favorites", component: FavoritesPageComponent },
+  { path: "recipe-list", component: RecipeListComponent }
+  // { path: "**", component: ErrorComponent }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchCriteriaComponent,
     RecipeListComponent,
-    FavoritesPageComponent
+    FavoritesPageComponent,
+    RecipeComponent
   ],
-  imports: [BrowserModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
+    FormsModule
+  ],
   providers: [RecipeApiService],
   bootstrap: [AppComponent]
 })

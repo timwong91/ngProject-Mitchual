@@ -13,16 +13,10 @@ export class SearchCriteriaComponent implements OnInit {
   ngOnInit() {}
 
   searchRecipe(form) {
-    this.recipeApiService
-      .getEdamamData(
-        form.value.searchTerm,
-        form.value.caloriesMin,
-        form.value.caloriesMax
-        // form.value.cuisineType
-      )
-      .subscribe(response => {
-        this.recipeData = response["hits"];
-        console.log(this.recipeData);
-      });
+    console.log(form.value);
+    this.recipeApiService.getEdamamData(form.value).subscribe(response => {
+      this.recipeData = response["hits"];
+      console.log(this.recipeData);
+    });
   }
 }

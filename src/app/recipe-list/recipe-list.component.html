@@ -1,11 +1,15 @@
 <h1>Recipe List</h1>
-<div *ngFor="let recipe of recipeData">
-  <img src="{{ recipe.recipe.image }}" alt="" />
+<div>
+  <recipe
+    *ngFor="let recipe of recipeData; index as i"
+    [recipe]="recipe"
+  ></recipe>
+  <!-- <img src="{{ recipe.recipe.image }}" alt="" />
   <p>"{{ recipe.recipe.label }}"</p>
   <p>Dietary Restrictions:</p>
   <p>{{ recipe.recipe.healthLabels[0] }}</p>
   <p>{{ recipe.recipe.healthLabels[1] }}</p>
   <p>{{ recipe.recipe.healthLabels[2] }}</p>
   <p>{{ recipe.recipe.healthLabels[3] }}</p>
-  <button>Favorites</button>
+  <button>Favorites</button> -->
 </div>
