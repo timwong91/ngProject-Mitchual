@@ -1,10 +1,8 @@
 <!-- <h1>Recipe List</h1> -->
 <section>
   <div *ngFor="let recipe of recipeData; index as i">
-    <div class="heart">
       <p class="title">{{ recipe.recipe.label }}</p>
       <i (click)="addToFavorites(recipe)" class="material-icons">favorite</i>
-    </div>
     <!-- <recipe [recipe]="recipe" (onFavoriteRecipe)="favoriteRecipe($event)">
   </recipe> -->
     <img (click)="toggleRecipe(i)" src="{{ recipe.recipe.image }}" alt="" />
