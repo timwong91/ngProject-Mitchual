@@ -7,24 +7,24 @@ import { RecipeApiService } from "../recipe-api.service";
   styleUrls: ["./search-criteria.component.css"]
 })
 export class SearchCriteriaComponent implements OnInit {
+  recipeData: any[] = [];
 
-
-recipeData: any[] = [];
-  
   constructor(private recipeApiService: RecipeApiService) {}
 
   ngOnInit() {
     this.recipeData = this.recipeApiService.getRecipes();
   }
 
-searchRecipe(form): void {
-  this.recipeApiService.getEdamamData(
-    form.value.searchTerm, 
-    form.value.caloriesMin, 
-    form.value.caloriesMax, 
-    form.value.diet
-    ).then(response => {
-      this.recipeData = response;
-    });
-}
+  searchRecipe(form): void {
+    this.recipeApiService
+      .getEdamamData(
+        form.value.searchTerm,
+        form.value.caloriesMin,
+        form.value.caloriesMax,
+        form.value.diet
+      )
+      .then(response => {
+        this.recipeData = response;
+      });
+  }
 }

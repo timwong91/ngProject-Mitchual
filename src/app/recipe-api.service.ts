@@ -7,6 +7,10 @@ import { HttpClient } from "@angular/common/http";
 export class RecipeApiService {
   appid: string = "b5c9605c";
   apikey: string = "bd777770e78b145d634b5bf922500535";
+  apiUrl: string;
+  searchTermUrl: string;
+  caloriesUrl: string;
+  dietUrl: string;
 
   favoriteRecipe: any[] = [];
 
@@ -14,25 +18,97 @@ export class RecipeApiService {
 
   constructor(private http: HttpClient) {}
 
-  getEdamamData(searchTerm, caloriesMin, caloriesMax, diet) {
-    return this.http
-      .get(
-        `https://api.edamam.com/search?q=${searchTerm}&app_id=${
-          this.appid
-        }&app_key=${
-          this.apikey
-        }&from=0&to=3&calories=${caloriesMin}-${caloriesMax}&diet=${diet}`
-      )
-      .toPromise()
-      .then(response => {
-        this.recipeData = response["hits"];
-        this.recipeData = this.recipeData.map(recipe => {
-          return { ...recipe, shouldBeVisible: false } 
+  // getEdamamData(searchTerm, caloriesMin, caloriesMax, diet) {
+  //   return this.http
+  //     .get(
+  //       `https://api.edamam.com/search?q=${searchTerm}&app_id=${
+  //         this.appid
+  //       }&app_key=${
+  //         this.apikey
+  //       }&from=0&to=3&calories=${caloriesMin}-${caloriesMax}&diet=${diet}`
+  //     )
+  //     .toPromise()
+  //     .then(response => {
+  //       this.recipeData = response["hits"];
+  //       this.recipeData = this.recipeData.map(recipe => {
+  //         return { ...recipe, shouldBeVisible: false }
+  //       });
+  //       console.log(this.recipeData);
+  //       return this.recipeData;
+  //     });
+  //    `https://api.edamam.com/search?q=${searchTerm}&app_id=${
+  //   this.appid
+  // }&app_key=${
+  //   this.apikey
+  // }&from=0&to=3&calories=${caloriesMin}-${caloriesMax}&diet=${diet}
+
+  getEdamamData(
+    searchTerm: string,
+    caloriesMin: number | string,
+    caloriesMax: number | string,
+    diet: string
+  ) {
+    this.apiUrl = `https://api.edamam.com/search?app_id=${this.appid}&app_key=${
+      this.apikey
+    }&from=0&to=3`;
+    this.searchTermUrl = `&q=${searchTerm}`;
+    this.caloriesUrl = `&calories=${caloriesMin}-${caloriesMax}`;
+    this.dietUrl = `&diet=${diet}`;
+    if (diet === "" && caloriesMax === "" && caloriesMin === "") {
+      return this.http
+        .get(`${this.apiUrl}${this.searchTermUrl}`)
+        .toPromise()
+        .then(response => {
+          this.recipeData = response["hits"];
+          this.recipeData = this.recipeData.map(recipe => {
+            return { ...recipe, shouldBeVisible: false };
+          });
+          console.log(this.recipeData);
+          return this.recipeData;
         });
-        console.log(this.recipeData);
-        return this.recipeData;
-      });
+    } else if (diet === "") {
+      return this.http
+        .get(`${this.apiUrl}${this.searchTermUrl}${this.caloriesUrl}`)
+        .toPromise()
+        .then(response => {
+          this.recipeData = response["hits"];
+          this.recipeData = this.recipeData.map(recipe => {
+            return { ...recipe, shouldBeVisible: false };
+          });
+          console.log(this.recipeData);
+          return this.recipeData;
+        });
+    } else if (caloriesMax === "" && caloriesMin === "") {
+      return this.http
+        .get(`${this.apiUrl}${this.searchTermUrl}${this.dietUrl}`)
+        .toPromise()
+        .then(response => {
+          this.recipeData = response["hits"];
+          this.recipeData = this.recipeData.map(recipe => {
+            return { ...recipe, shouldBeVisible: false };
+          });
+          console.log(this.recipeData);
+          return this.recipeData;
+        });
+    } else {
+      return this.http
+        .get(
+          `${this.apiUrl}${this.searchTermUrl}${this.caloriesUrl}${
+            this.dietUrl
+          }`
+        )
+        .toPromise()
+        .then(response => {
+          this.recipeData = response["hits"];
+          this.recipeData = this.recipeData.map(recipe => {
+            return { ...recipe, shouldBeVisible: false };
+          });
+          console.log(this.recipeData);
+          return this.recipeData;
+        });
+    }
   }
+
   getRecipes() {
     return this.recipeData;
   }
@@ -43,7 +119,7 @@ export class RecipeApiService {
 
   addToFavorite(newFavorite) {
     this.favoriteRecipe.push(newFavorite);
-    console.log(newFavorite);
+    // console.log(newFavorite);
     return this.favoriteRecipe;
   }
 

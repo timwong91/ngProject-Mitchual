@@ -10,11 +10,11 @@
     <input class="recipe" type="text" ngModel name="searchTerm" />
     <div class="input">
       <label for="">Calories From:</label>
-      <input type="text" ngModel name="caloriesMin" />
+      <input class="min" type="text" ngModel name="caloriesMin" />
       <label for="">To:</label>
-      <input type="text" ngModel name="caloriesMax" />
+      <input class="max" type="text" ngModel name="caloriesMax" />
       <label for="">Diet: </label>
-      <select name="diet" id="" ngModel>
+      <select class="diet" name="diet" id="" ngModel>
         <option value="balanced">Balanced</option>
         <option value="high-fiber">High-Fiber</option>
         <option value="high-protein">High-Protein</option>
@@ -23,10 +23,7 @@
         <option value="low-sodium">Low-Sodium</option>
       </select>
     </div>
-    <button>Button NOW</button>
-    <i class="material-icons">
-      search
-    </i>
+    <button>Search</button>
   </form>
 </section>
 
