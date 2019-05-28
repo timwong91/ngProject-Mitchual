@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { RecipeApiService } from "../recipe-api.service";
 
 @Component({
@@ -9,9 +9,16 @@ import { RecipeApiService } from "../recipe-api.service";
 
 export class RecipeListComponent implements OnInit {
   @Input() recipeData: any[];
+  favoriteRecipe: any[] = [];
+  @Output() onAddToFavorite = new EventEmitter<any>();
   constructor(private recipeApiService: RecipeApiService) {}
 
   ngOnInit() {
     this.recipeData = this.recipeApiService.getRecipes();
+  }
+
+  addToFavorites(index: number): void {
+    this.favoriteRecipe = this.recipeApiService.addToFavorite(index);
+    console.log(this.favoriteRecipe);
   }
 }

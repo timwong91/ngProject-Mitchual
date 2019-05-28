@@ -8,7 +8,6 @@ import { SearchCriteriaComponent } from "./search-criteria/search-criteria.compo
 import { RecipeListComponent } from "./recipe-list/recipe-list.component";
 import { FavoritesPageComponent } from "./favorites-page/favorites-page.component";
 import { RouterModule, Routes } from "@angular/router";
-import { RecipeComponent } from "./recipe/recipe.component";
 
 const appRoutes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -24,7 +23,6 @@ const appRoutes: Routes = [
     SearchCriteriaComponent,
     RecipeListComponent,
     FavoritesPageComponent,
-    RecipeComponent
   ],
   imports: [
     BrowserModule,

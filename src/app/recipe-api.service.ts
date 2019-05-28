@@ -13,24 +13,15 @@ export class RecipeApiService {
 
   recipeData: any[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  addToFavorite(newFavorite) {
-    console.log(newFavorite);
-    this.favoriteRecipe.push(newFavorite);
-  }
 
-  getFavorites() {
-    console.log("returns: ");
-    return this.favoriteRecipe;
-  }
-
-  getEdamamData( searchTerm, caloriesMin, caloriesMax, diet ) {
+  getEdamamData(searchTerm, caloriesMin, caloriesMax, diet) {
     return this.http.get(
       `https://api.edamam.com/search?q=${searchTerm}&app_id=${
-        this.appid
+      this.appid
       }&app_key=${
-        this.apikey
+      this.apikey
       }&from=0&to=3&?calories=${caloriesMin}-${caloriesMax}&?diet=${diet}`).toPromise().then(response => {
         this.recipeData = response["hits"];
         console.log(this.recipeData);
@@ -42,6 +33,17 @@ export class RecipeApiService {
     return this.recipeData;
   }
 
+  addToFavorite(newFavorite) {
+    console.log(newFavorite);
+    this.favoriteRecipe.push(newFavorite);
+    return this.favoriteRecipe;
+  }
+
+  getFavorites() {
+    console.log("returns: ");
+    return this.favoriteRecipe;
+  }
+
   // searchRecipe(form) {
   //   console.log(form.value);
   //   this.recipeApiService.getEdamamData(form.value).subscribe(response => {
@@ -49,5 +51,5 @@ export class RecipeApiService {
   //     console.log(this.recipeData);
   //   });
   // }
-  
+
 }
