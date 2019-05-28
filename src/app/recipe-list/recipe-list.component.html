@@ -9,6 +9,6 @@
   <p>{{ recipe.recipe.healthLabels[1] }}</p>
   <p>{{ recipe.recipe.healthLabels[2] }}</p>
   <p>{{ recipe.recipe.healthLabels[3] }}</p>
-  <button (onAddToFavorites)="addToFavorite(i)">Favorites</button>
+  <button (click)="addToFavorites(i)">Favorites</button>
   <a href="{{ recipe.recipe.url }}">Link to Recipe</a>
 </div>
