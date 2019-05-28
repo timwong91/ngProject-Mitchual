@@ -5,12 +5,17 @@
   <img (click)="toggleRecipe(i)" src="{{ recipe.recipe.image }}" alt="" />
   <p>{{ recipe.recipe.label }}</p>
   <div *ngIf="recipe.shouldBeVisible">
-  <p>Dietary Restrictions:</p>
-  <p>{{ recipe.recipe.healthLabels[0] }}</p>
-  <p>{{ recipe.recipe.healthLabels[1] }}</p>
-  <p>{{ recipe.recipe.healthLabels[2] }}</p>
-  <p>{{ recipe.recipe.healthLabels[3] }}</p>
-  <button (click)="addToFavorites(recipe)">Favorites</button>
-  <a href="{{ recipe.recipe.url }}">Link to Recipe</a>
+    <p>Calories: {{ recipe.recipe.calories }}</p>
+    <p>Ingredients:</p>
+    <!-- <ul>
+      <li>{{}}</li>
+    </ul> -->
+    <p>Dietary Restrictions:</p>
+    <p>{{ recipe.recipe.healthLabels[0] }}</p>
+    <p>{{ recipe.recipe.healthLabels[1] }}</p>
+    <p>{{ recipe.recipe.healthLabels[2] }}</p>
+    <p>{{ recipe.recipe.healthLabels[3] }}</p>
+    <button (click)="addToFavorites(recipe)">Favorites</button>
+    <a href="{{ recipe.recipe.url }}">Link to Recipe</a>
   </div>
 </div>
