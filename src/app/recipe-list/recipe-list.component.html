@@ -3,15 +3,20 @@
 <div *ngFor="let recipe of recipeData; index as i">
   <!-- <recipe [recipe]="recipe" (onFavoriteRecipe)="favoriteRecipe($event)">
   </recipe> -->
-  <p class = "title">{{ recipe.recipe.label }}</p>
+  
+  <div class="heart">
+      <p class = "title">{{ recipe.recipe.label }}</p>
+  <i (click)="addToFavorites(recipe)" class="material-icons">favorite</i>
   <img src="{{ recipe.recipe.image }}" alt="" />
   <a href="{{ recipe.recipe.url }}">Get Full Recipe Here!</a>
+</div>
+  
   <!-- <p>Dietary Restrictions:</p>
   <p>{{ recipe.recipe.healthLabels[0] }}</p>
   <p>{{ recipe.recipe.healthLabels[1] }}</p>
   <p>{{ recipe.recipe.healthLabels[2] }}</p>
   <p>{{ recipe.recipe.healthLabels[3] }}</p> -->
   <!-- <button (click)="addToFavorites(recipe)">Favorites</button> -->
-  <i (click)="addToFavorites(recipe)" class="material-icons">favorite</i>
+ 
 </div>
 </section>
