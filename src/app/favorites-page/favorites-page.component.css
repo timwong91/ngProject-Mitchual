@@ -14,7 +14,7 @@ img {
 
 p {
     font-family: "Julius Sans One", sans-serif;
-    font-size: 25px;
+    font-size: 15px;
     margin-top: 5px;
 }
 
@@ -33,5 +33,27 @@ div {
     align-content: center;
     margin-bottom: 5px;
     font-weight: bold;
+}
 
+a {
+    font-family: "Julius Sans One", sans-serif;
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+.label {
+    font-size: 25px;
+}
+
+i {
+    margin-left: 200px;
+
+}
+
+.popup {
+    position: absolute;
+    background-color: lightgrey;
+    box-shadow: 5px 5px 5px grey;
+    height: 400px;
+    width: 400px;
 }
