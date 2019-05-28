@@ -6,19 +6,19 @@ import { RecipeApiService } from "../recipe-api.service";
   templateUrl: "./recipe-list.component.html",
   styleUrls: ["./recipe-list.component.css"]
 })
-
 export class RecipeListComponent implements OnInit {
   @Input() recipeData: any[];
-  favoriteRecipe: any[] = [];
-  @Output() onAddToFavorite = new EventEmitter<any>();
+  @Input() favoriteRecipe: any[];
+  // @Output() onAddToFavorite = new EventEmitter<any>();
   constructor(private recipeApiService: RecipeApiService) {}
 
   ngOnInit() {
     this.recipeData = this.recipeApiService.getRecipes();
   }
 
-  addToFavorites(index: number): void {
-    this.favoriteRecipe = this.recipeApiService.addToFavorite(index);
+  // changed parameter to favRecipe which is an object
+  addToFavorites(favRecipe): void {
+    this.favoriteRecipe = this.recipeApiService.addToFavorite(favRecipe);
     console.log(this.favoriteRecipe);
   }
 }

@@ -11,6 +11,8 @@
    <p>{{ recipe.recipe.healthLabels[2] }}</p>
    <p>{{ recipe.recipe.healthLabels[3] }}</p>
   </div> -->
-  <div *ngFor="let favorite of favoriteRecipe">
-    <p>{{ favorite }}</p>
-  </div>
+
+<div *ngFor="let favorite of favoriteRecipe">
+  <p>{{ favorite.recipe.label }}</p>
+  <img src="{{ favorite.recipe.image }}" alt="" />
+</div>

@@ -5,7 +5,7 @@
 </section>
 
 <section>
-  <form #recipeForm="ngForm" (ngSubmit)="searchRecipe(recipeForm)">
+  <form #recipeForm="ngForm" (ngSubmit)="searchRecipe(recipeForm, index)">
     <label for="">Search Recipe: </label>
     <input class="recipe" type="text" ngModel name="searchTerm" />
     <div class="input">
@@ -13,7 +13,6 @@
       <input type="text" ngModel name="caloriesMin" />
       <label for="">To:</label>
       <input type="text" ngModel name="caloriesMax" />
-
       <label for="">Diet: </label>
       <select name="diet" id="" ngModel>
         <option value="balanced">Balanced</option>

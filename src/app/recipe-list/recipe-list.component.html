@@ -1,5 +1,5 @@
 <h1>Recipe List</h1>
-<div *ngFor="let recipe of recipeData; index as i" > 
+<div *ngFor="let recipe of recipeData; index as i">
   <!-- <recipe [recipe]="recipe" (onFavoriteRecipe)="favoriteRecipe($event)">
   </recipe> -->
   <img src="{{ recipe.recipe.image }}" alt="" />
@@ -9,6 +9,6 @@
   <p>{{ recipe.recipe.healthLabels[1] }}</p>
   <p>{{ recipe.recipe.healthLabels[2] }}</p>
   <p>{{ recipe.recipe.healthLabels[3] }}</p>
-  <button (click)="addToFavorites(i)">Favorites</button>
+  <button (click)="addToFavorites(recipe)">Favorites</button>
   <a href="{{ recipe.recipe.url }}">Link to Recipe</a>
 </div>

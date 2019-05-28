@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { RecipeInfo } from "./recipe-info";
 
 @Injectable({
   providedIn: "root"
@@ -13,34 +12,35 @@ export class RecipeApiService {
 
   recipeData: any[] = [];
 
-  constructor(private http: HttpClient) { }
-
+  constructor(private http: HttpClient) {}
 
   getEdamamData(searchTerm, caloriesMin, caloriesMax, diet) {
-    return this.http.get(
-      `https://api.edamam.com/search?q=${searchTerm}&app_id=${
-      this.appid
-      }&app_key=${
-      this.apikey
-      }&from=0&to=3&?calories=${caloriesMin}-${caloriesMax}&?diet=${diet}`).toPromise().then(response => {
+    return this.http
+      .get(
+        `https://api.edamam.com/search?q=${searchTerm}&app_id=${
+          this.appid
+        }&app_key=${
+          this.apikey
+        }&from=0&to=3&calories=${caloriesMin}-${caloriesMax}&diet=${diet}`
+      )
+      .toPromise()
+      .then(response => {
         this.recipeData = response["hits"];
         console.log(this.recipeData);
         return this.recipeData;
       });
-
   }
   getRecipes() {
     return this.recipeData;
   }
 
-  addToFavorite(newFavorite) {
-    console.log(newFavorite);
-    this.favoriteRecipe.push(newFavorite);
+  getFavorites() {
     return this.favoriteRecipe;
   }
 
-  getFavorites() {
-    console.log("returns: ");
+  addToFavorite(newFavorite) {
+    this.favoriteRecipe.push(newFavorite);
+    console.log(newFavorite);
     return this.favoriteRecipe;
   }
 
@@ -51,5 +51,4 @@ export class RecipeApiService {
   //     console.log(this.recipeData);
   //   });
   // }
-
 }
