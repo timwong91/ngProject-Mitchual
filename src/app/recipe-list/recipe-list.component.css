@@ -1,17 +1,23 @@
 section {
-    width: 100%;
+    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-left: 50px;
+    margin-right: 50px;
 
 }
 
 img {
     border-radius: 50%;
+    box-shadow: 5px 5px 5px grey;
+  
 }
 
 p {
     font-family: "Julius Sans One", sans-serif;
+    font-size: 15px;
+    margin-top: 5px;
 }
 
 div {
@@ -23,5 +29,11 @@ div {
 
 .title{
     font-size: 20px;
-    font-weight: 200;
+    font-weight: 500%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 5px;
+    font-weight: bold;
+
 }

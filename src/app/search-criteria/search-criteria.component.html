@@ -1,20 +1,22 @@
-<section>
-  <div class="gif">
-    Video coming soon
-  </div>
+<link href="https://fonts.googleapis.com/css?family=Homemade+Apple&display=swap" rel="stylesheet">
+
+<section class="container">
+    <img src= "https://mondrian.mashable.com/uploads%252Fcard%252Fimage%252F643210%252F03c78dc8-a31d-46a4-a9c5-8c6f48b8e520.gif%252Ffit-in__1200x9600.gif?signature=OVFmF1X8Zfkzx9wlKA82Fnkrtxc=&source=https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com">
+    <div class="prettyAlright">Pretty Alright Recipes</div>
 </section>
 
 <section>
   <form #recipeForm="ngForm" (ngSubmit)="searchRecipe(recipeForm, index)">
-    <label for="">Search Recipe: </label>
+    <label class="searchRecipe" for="">Find a recipe:
+       </label>
     <input class="recipe" type="text" ngModel name="searchTerm" />
     <div class="input">
-      <label for="">Calories From:</label>
+      <label class="min" for="">Calories From:</label>
       <input type="text" ngModel name="caloriesMin" />
-      <label for="">To:</label>
+      <label class="max" for="">To:</label>
       <input type="text" ngModel name="caloriesMax" />
-      <label for="">Diet: </label>
-      <select name="diet" id="" ngModel>
+      <label  for="">Diet: </label>
+      <select class="diet" name="diet" id="" ngModel>
         <option value="balanced">Balanced</option>
         <option value="high-fiber">High-Fiber</option>
         <option value="high-protein">High-Protein</option>
@@ -23,10 +25,7 @@
         <option value="low-sodium">Low-Sodium</option>
       </select>
     </div>
-    <button>Button NOW</button>
-    <i class="material-icons">
-      search
-    </i>
+    <button>Search</button>
   </form>
 </section>
 
