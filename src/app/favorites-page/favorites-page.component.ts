@@ -1,4 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
+import { RecipeApiService } from "../recipe-api.service";
 
 @Component({
   selector: "favorites-page",
@@ -6,7 +7,10 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./favorites-page.component.css"]
 })
 export class FavoritesPageComponent implements OnInit {
-  constructor() {}
+  @Input() favoriteRecipe: any[] = [];
+  constructor(private recipeApiService: RecipeApiService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.favoriteRecipe = this.recipeApiService.getFavorites();
+  }
 }
