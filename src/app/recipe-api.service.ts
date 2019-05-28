@@ -55,6 +55,15 @@ export class RecipeApiService {
           console.log(this.recipeData);
           return this.recipeData;
         });
+    } else if (caloriesMax === "" && caloriesMin === "") {
+      return this.http
+        .get(`${this.apiUrl}${this.searchTermUrl}${this.dietUrl}`)
+        .toPromise()
+        .then(response => {
+          this.recipeData = response["hits"];
+          console.log(this.recipeData);
+          return this.recipeData;
+        });
     } else {
       return this.http
         .get(
