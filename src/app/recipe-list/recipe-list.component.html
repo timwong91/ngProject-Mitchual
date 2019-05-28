@@ -10,6 +10,11 @@
     <div *ngIf="recipe.shouldBeVisible">
       <p>Calories: {{ recipe.recipe.calories | number: "1.0-0" }}</p>
       <p>Ingredients:</p>
+      <ul>
+        <li *ngFor="let ingredient of recipe.recipe.ingredientLines">
+          {{ ingredient }}
+        </li>
+      </ul>
       <!-- <ul>
       <li>{{}}</li>
     </ul> -->
