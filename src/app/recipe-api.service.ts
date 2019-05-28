@@ -26,6 +26,9 @@ export class RecipeApiService {
       .toPromise()
       .then(response => {
         this.recipeData = response["hits"];
+        this.recipeData = this.recipeData.map(recipe => {
+          return { ...recipe, shouldBeVisible: false } 
+        });
         console.log(this.recipeData);
         return this.recipeData;
       });
@@ -42,6 +45,10 @@ export class RecipeApiService {
     this.favoriteRecipe.push(newFavorite);
     console.log(newFavorite);
     return this.favoriteRecipe;
+  }
+
+  deleteFromFavorites(index) {
+    this.favoriteRecipe.splice(index, 1);
   }
 
   // searchRecipe(form) {

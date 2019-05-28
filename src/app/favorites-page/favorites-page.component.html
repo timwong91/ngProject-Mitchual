@@ -1,18 +1,22 @@
-<!-- <h1>Favorite List</h1>
-<div
-    *ngFor="let recipe of recipeData; index as i"
-    [recipe]="recipe"
-   (onFavoriteRecipe)="favoriteRecipe($event)">
-   <img src="{{ recipe.recipe.image }}" alt="" />
-   <p>{{ recipe.recipe.label }}</p>
-   <p>Dietary Restrictions:</p>
-   <p>{{ recipe.recipe.healthLabels[0] }}</p>
-   <p>{{ recipe.recipe.healthLabels[1] }}</p>
-   <p>{{ recipe.recipe.healthLabels[2] }}</p>
-   <p>{{ recipe.recipe.healthLabels[3] }}</p>
-  </div> -->
+<div *ngFor="let favorite of favoriteRecipe; index as i">
+  <!-- <recipe [recipe]="recipe" (onFavoriteRecipe)="favoriteRecipe($event)">
+    </recipe> -->
+  <img (click)="toggleFavorite(i)" src="{{ favorite.recipe.image }}" alt="" />
+  <p>{{ favorite.recipe.label }}</p>
+  <div *ngIf="favorite.shouldBeVisible">
+    <p>Dietary Restrictions:</p>
+    <p>{{ favorite.recipe.healthLabels[0] }}</p>
+    <p>{{ favorite.recipe.healthLabels[1] }}</p>
+    <p>{{ favorite.recipe.healthLabels[2] }}</p>
+    <p>{{ favorite.recipe.healthLabels[3] }}</p>
+    <button (click)="addToFavorites(recipe)">Favorites</button>
+    <a href="{{ favorite.recipe.url }}">Link to Recipe</a>
+    <button (click)="deleteFromFavorites(i)">Delete</button>
+  </div>
+</div>
 
-<div *ngFor="let favorite of favoriteRecipe">
+<!-- <div *ngFor="let favorite of favoriteRecipe">
   <p>{{ favorite.recipe.label }}</p>
   <img src="{{ favorite.recipe.image }}" alt="" />
-</div>
+  <div *ngIf="recipe.shouldBeVisible"></div>
+</div> -->

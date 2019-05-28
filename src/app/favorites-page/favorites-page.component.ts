@@ -7,10 +7,20 @@ import { RecipeApiService } from "../recipe-api.service";
   styleUrls: ["./favorites-page.component.css"]
 })
 export class FavoritesPageComponent implements OnInit {
-  @Input() favoriteRecipe: any[] = [];
+  favoriteRecipe: any[] = [];
+  shouldBeVisible: boolean = false;
+
   constructor(private recipeApiService: RecipeApiService) {}
 
   ngOnInit() {
     this.favoriteRecipe = this.recipeApiService.getFavorites();
+  }
+
+  toggleFavorite(i) {
+    this.favoriteRecipe[i].shouldBeVisible = !this.favoriteRecipe[i].shouldBeVisible;
+  }
+
+  deleteFromFavorites(i) {
+    this.favoriteRecipe = this.recipeApiService.deleteFromFavorites[i];
   }
 }
