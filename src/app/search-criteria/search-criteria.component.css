@@ -4,7 +4,7 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  
 }
 
 form {
@@ -17,20 +17,28 @@ form {
   border: 1px solid black;
   width: 80%;
   height: 200px;
+  margin-top: 50px;
+  
 }
 
 .input {
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 81%;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.searchRecipe{
+  font-size: 30px;
 }
 
 .recipe {
   width: 80%;
 }
 
-input {
-  padding-left: 10px;
+.min, .max, .diet {
+  width: 150px;
 }
 
 .material-icons {
@@ -38,11 +46,33 @@ input {
 }
 
 .gif {
+  margin-top: 50px;
   border: 1px solid black;
   width: 80%;
-  height: 150px;
+  height: 300px;
 }
 
 .recipe {
   width: 80%;
+}
+
+
+button {
+  margin-top: 20px;
+  width: 80%;
+  height: 10%;
+  border: 1px solid lightgrey;
+  font-family: "Julius Sans One", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+recipe-list {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }

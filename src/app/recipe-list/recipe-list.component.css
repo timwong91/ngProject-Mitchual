@@ -1,0 +1,27 @@
+section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+img {
+    border-radius: 50%;
+}
+
+p {
+    font-family: "Julius Sans One", sans-serif;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    font-size: 20px;
+    font-weight: 200;
+}
