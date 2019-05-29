@@ -21,12 +21,6 @@ i {
 
 }
 
-<<<<<<< HEAD
-p {
-  font-family: "Julius Sans One", sans-serif;
-  font-size: 15px;
-  margin-top: 5px;
-=======
 p , li{
     font-family: "Julius Sans One", sans-serif;
     font-size: 18px;
@@ -41,7 +35,6 @@ p , li{
 
 li {
     text-align: center;
->>>>>>> styling
 }
 
 div {
@@ -61,21 +54,15 @@ div {
   font-weight: bold;
 }
 
-a {
-<<<<<<< HEAD
-  font-family: "Julius Sans One", sans-serif;
-  font-size: 15px;
-  margin-top: 15px;
-}
-
 .redHeart {
   color: red;
 }
-=======
+
+a {
     font-family: "Julius Sans One", sans-serif;
     font-size: 15px;
     margin-top: 15px;
-}
+  }
 
 .popup {
     position: absolute;
@@ -85,4 +72,3 @@ a {
     width: 400px;
     opacity: 0.9;
 }
->>>>>>> styling
