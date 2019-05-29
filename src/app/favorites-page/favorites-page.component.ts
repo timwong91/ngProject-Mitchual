@@ -19,7 +19,7 @@ export class FavoritesPageComponent implements OnInit {
   toggleFavorite(i) {
     this.favoriteRecipe[i].shouldBeVisible = !this.favoriteRecipe[i]
       .shouldBeVisible;
-  }
+  } 
 
   deleteFromFavorites(index: number) {
     console.log(index);

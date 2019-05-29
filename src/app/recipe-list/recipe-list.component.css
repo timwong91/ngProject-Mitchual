@@ -17,13 +17,24 @@ img {
 
 i {
     margin-left: 240px;
+    cursor: pointer;
 
 }
 
-p {
+p , li{
     font-family: "Julius Sans One", sans-serif;
-    font-size: 15px;
+    font-size: 18px;
     margin-top: 5px;
+    color: white;
+    font-weight: bolder;
+}
+
+.title {
+    color:black;
+}
+
+li {
+    text-align: center;
 }
 
 div {
@@ -49,4 +60,13 @@ a {
     font-family: "Julius Sans One", sans-serif;
     font-size: 15px;
     margin-top: 15px;
+}
+
+.popup {
+    position: absolute;
+    background-color: #00a7c4;
+    box-shadow: 5px 5px 5px grey;
+    height: 400px;
+    width: 400px;
+    opacity: 0.9;
 }
