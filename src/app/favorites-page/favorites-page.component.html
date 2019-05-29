@@ -3,7 +3,7 @@
     <!-- <recipe [recipe]="recipe" (onFavoriteRecipe)="favoriteRecipe($event)">
     </recipe> -->
     <p class="label">{{ favorite.recipe.label }}</p>
-    <i (click)="deleteFromFavorites(i)" class="material-icons">favorite</i>
+    <i (click)="deleteFromFavorites(i, favorite.recipe.label)" [ngClass]="{ redHeart: favorite.clickedHeart }" class="material-icons">favorite</i>
     <img (click)="toggleFavorite(i)" src="{{ favorite.recipe.image }}" alt="" />
 
     <div class="popup" *ngIf="favorite.shouldBeVisible">

@@ -124,6 +124,7 @@ export class RecipeApiService {
   }
 
   deleteFromFavorites(index) {
+    // console.log(this.recipeData[index].recipe.label)
     this.favoriteRecipe.splice(index, 1);
     return this.favoriteRecipe;
   }
@@ -137,8 +138,15 @@ export class RecipeApiService {
     // return this.clickedHeart;
   }
 
-  untoggleHeart(i) {
-    this.recipeData[i].clickedHeart = false;
+  untoggleHeart(favoriteLabel) {
+    for (let i = 0; i < this.recipeData.length; i++){
+      if (favoriteLabel === this.recipeData[i].recipe.label) {
+        // console.log(this.recipeData[i].label);
+        this.recipeData[i].clickedHeart = false;
+        return this.recipeData;
+        
+      }
+    }
   }
   // searchRecipe(form) {
   //   console.log(form.value);

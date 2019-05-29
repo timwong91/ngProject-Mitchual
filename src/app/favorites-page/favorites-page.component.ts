@@ -22,10 +22,10 @@ export class FavoritesPageComponent implements OnInit {
       .shouldBeVisible;
   }
 
-  deleteFromFavorites(index: number) {
-    // console.log(index);
-    this.recipeApiService.deleteFromFavorites(index);
-    this.recipeApiService.untoggleHeart(index);
+  deleteFromFavorites(index: number, favoriteLabel: string) {
+    // console.log(favoriteLabel);
+    this.recipeApiService.untoggleHeart(favoriteLabel);
+    this.favoriteRecipe = this.recipeApiService.deleteFromFavorites(index);
     // this.favoriteRecipe.splice(index, 1);
   } 
 
