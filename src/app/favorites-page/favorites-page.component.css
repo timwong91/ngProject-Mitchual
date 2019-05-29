@@ -35,3 +35,11 @@ div {
     font-weight: bold;
 
 }
+
+.popup {
+    position: absolute;
+    background-color: lightgrey;
+    box-shadow: 5px 5px 5px grey;
+    height: 400px;
+    width: 400px;
+}
