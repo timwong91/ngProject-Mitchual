@@ -5,8 +5,8 @@
       <p class="title">{{ recipe.recipe.label }}</p>
       <i
         [ngClass]="{ 'redHeart': recipeData[i].clickedHeart }"
-        (click)="toggleHeart(i)"
-        (click)="addToFavorites(recipe)"
+       
+        (click)="addToFavorites(recipe, i)"
         class="material-icons"
         >favorite</i
       >

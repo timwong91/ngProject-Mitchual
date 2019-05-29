@@ -18,8 +18,9 @@ export class RecipeListComponent implements OnInit {
   }
 
   // changed parameter to favRecipe which is an object
-  addToFavorites(favRecipe): void {
+  addToFavorites(favRecipe, i): void {
     this.favoriteRecipe = this.recipeApiService.addToFavorite(favRecipe);
+    this.recipeApiService.toggleHeart(i);
     console.log(this.favoriteRecipe);
   }
 
@@ -27,7 +28,7 @@ export class RecipeListComponent implements OnInit {
     this.recipeData[i].shouldBeVisible = !this.recipeData[i].shouldBeVisible;
   }
 
-  toggleHeart(i) {
-    this.recipeApiService.toggleHeart(i);
-  }
+  // toggleHeart(i) {
+  //   this.recipeApiService.toggleHeart(i);
+  // }
 }
