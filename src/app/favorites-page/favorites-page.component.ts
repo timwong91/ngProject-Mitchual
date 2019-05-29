@@ -22,8 +22,8 @@ export class FavoritesPageComponent implements OnInit {
   }
 
   deleteFromFavorites(index: number) {
-    console.log(index);
+    // console.log(index);
     this.recipeApiService.deleteFromFavorites(index);
-    this.favoriteRecipe.splice(index, 1);
+    // this.favoriteRecipe.splice(index, 1);
   } 
 }
