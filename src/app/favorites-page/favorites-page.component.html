@@ -1,19 +1,31 @@
-<!-- <h1>Favorite List</h1>
-<div
-    *ngFor="let recipe of recipeData; index as i"
-    [recipe]="recipe"
-   (onFavoriteRecipe)="favoriteRecipe($event)">
-   <img src="{{ recipe.recipe.image }}" alt="" />
-   <p>{{ recipe.recipe.label }}</p>
-   <p>Dietary Restrictions:</p>
-   <p>{{ recipe.recipe.healthLabels[0] }}</p>
-   <p>{{ recipe.recipe.healthLabels[1] }}</p>
-   <p>{{ recipe.recipe.healthLabels[2] }}</p>
-   <p>{{ recipe.recipe.healthLabels[3] }}</p>
-  </div> -->
 <section>
+<<<<<<< HEAD
 <div class="popup" *ngFor="let favorite of favoriteRecipe">
   <p>{{ favorite.recipe.label }}</p>
   <img src="{{ favorite.recipe.image }}" alt="" />
+=======
+<div *ngFor="let favorite of favoriteRecipe; index as i">
+  <!-- <recipe [recipe]="recipe" (onFavoriteRecipe)="favoriteRecipe($event)">
+    </recipe> -->
+    <p class = "label">{{ favorite.recipe.label }}</p>
+  <i (click)="deleteFromFavorites(i)"class="material-icons">favorite</i>
+  <img (click)="toggleFavorite(i)" src="{{ favorite.recipe.image }}" alt="" />
+ 
+  <div class="popup" *ngIf="favorite.shouldBeVisible">
+    <p class = "label">{{ favorite.recipe.label }}</p>
+    <p>Dietary Restrictions:</p>
+    <p>{{ favorite.recipe.healthLabels[0] }}</p>
+    <p>{{ favorite.recipe.healthLabels[1] }}</p>
+    <p>{{ favorite.recipe.healthLabels[2] }}</p>
+    <p>{{ favorite.recipe.healthLabels[3] }}</p>
+    <a href="{{ favorite.recipe.url }}">Get the full reciepe here!</a>
+    
+  </div>
+>>>>>>> master
 </div>
 </section>
+<!-- <div *ngFor="let favorite of favoriteRecipe">
+  <p>{{ favorite.recipe.label }}</p>
+  <img src="{{ favorite.recipe.image }}" alt="" />
+  <div *ngIf="recipe.shouldBeVisible"></div>
+</div> -->

@@ -9,6 +9,7 @@ import { RecipeApiService } from "../recipe-api.service";
 export class RecipeListComponent implements OnInit {
   @Input() recipeData: any[];
   @Input() favoriteRecipe: any[];
+  shouldBeVisible: boolean = false;
   // @Output() onAddToFavorite = new EventEmitter<any>();
   constructor(private recipeApiService: RecipeApiService) {}
 
@@ -20,5 +21,9 @@ export class RecipeListComponent implements OnInit {
   addToFavorites(favRecipe): void {
     this.favoriteRecipe = this.recipeApiService.addToFavorite(favRecipe);
     console.log(this.favoriteRecipe);
+  }
+
+  toggleRecipe(i) {
+    this.recipeData[i].shouldBeVisible = !this.recipeData[i].shouldBeVisible;
   }
 }
