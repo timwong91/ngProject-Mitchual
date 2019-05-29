@@ -9,7 +9,7 @@ import { RecipeApiService } from "../recipe-api.service";
 export class SearchCriteriaComponent implements OnInit {
   recipeData: any[] = [];
 
-  constructor(private recipeApiService: RecipeApiService) {}
+  constructor(private recipeApiService: RecipeApiService) { }
 
   ngOnInit() {
     this.recipeData = this.recipeApiService.getRecipes();
@@ -26,5 +26,11 @@ export class SearchCriteriaComponent implements OnInit {
       .then(response => {
         this.recipeData = response;
       });
+  }
+
+
+
+  deleteFromFavorites(index: number) {
+    this.recipeData.splice(index, 1);
   }
 }
