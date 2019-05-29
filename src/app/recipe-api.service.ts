@@ -125,6 +125,7 @@ export class RecipeApiService {
 
   deleteFromFavorites(index) {
     this.favoriteRecipe.splice(index, 1);
+    return this.favoriteRecipe;
   }
 
   // searchRecipe(form) {

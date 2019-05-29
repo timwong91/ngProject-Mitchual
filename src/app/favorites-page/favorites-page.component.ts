@@ -22,6 +22,6 @@ export class FavoritesPageComponent implements OnInit {
   }
 
   deleteFromFavorites(i) {
-    this.favoriteRecipe = this.recipeApiService.deleteFromFavorites[i];
+    this.favoriteRecipe = this.recipeApiService.deleteFromFavorites(i);
   }
 }
