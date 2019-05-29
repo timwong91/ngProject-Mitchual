@@ -17,29 +17,6 @@ export class RecipeApiService {
   clickedHeart: boolean = false;
   constructor(private http: HttpClient) {}
 
-  // getEdamamData(searchTerm, caloriesMin, caloriesMax, diet) {
-  //   return this.http
-  //     .get(
-  //       `https://api.edamam.com/search?q=${searchTerm}&app_id=${
-  //         this.appid
-  //       }&app_key=${
-  //         this.apikey
-  //       }&from=0&to=3&calories=${caloriesMin}-${caloriesMax}&diet=${diet}`
-  //     )
-  //     .toPromise()
-  //     .then(response => {
-  //       this.recipeData = response["hits"];
-  //       this.recipeData = this.recipeData.map(recipe => {
-  //         return { ...recipe, shouldBeVisible: false }
-  //       });
-  //       console.log(this.recipeData);
-  //       return this.recipeData;
-  //     });
-  //    `https://api.edamam.com/search?q=${searchTerm}&app_id=${
-  //   this.appid
-  // }&app_key=${
-  //   this.apikey
-  // }&from=0&to=3&calories=${caloriesMin}-${caloriesMax}&diet=${diet}
 
   getEdamamData(
     searchTerm: string,
@@ -49,7 +26,7 @@ export class RecipeApiService {
   ) {
     this.apiUrl = `https://api.edamam.com/search?app_id=${this.appid}&app_key=${
       this.apikey
-    }&from=0&to=3`;
+    }&from=0&to=8`;
     this.searchTermUrl = `&q=${searchTerm}`;
     this.caloriesUrl = `&calories=${caloriesMin}-${caloriesMax}`;
     this.dietUrl = `&diet=${diet}`;

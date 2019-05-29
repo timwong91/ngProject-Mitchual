@@ -3,6 +3,7 @@ section{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    flex-wrap: wrap;
     margin-top: 100px;
 }
 
@@ -51,6 +52,7 @@ a {
     font-family: "Julius Sans One", sans-serif;
     font-size: 15px;
     margin-top: 10px;
+    margin-bottom: 50px;
 }
 
 

@@ -5,6 +5,7 @@ section {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
     margin-left: 50px;
     margin-right: 50px;
     margin-bottom: 50px;
@@ -62,6 +63,7 @@ a {
     font-family: "Julius Sans One", sans-serif;
     font-size: 15px;
     margin-top: 15px;
+    margin-bottom: 50px;
   }
 
 .popup {
