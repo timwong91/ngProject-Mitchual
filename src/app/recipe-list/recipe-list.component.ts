@@ -10,7 +10,7 @@ export class RecipeListComponent implements OnInit {
   @Input() recipeData: any[];
   @Input() favoriteRecipe: any[];
   shouldBeVisible: boolean = false;
-  // @Output() onAddToFavorite = new EventEmitter<any>();
+  @Input() clickedHeart: boolean;
   constructor(private recipeApiService: RecipeApiService) {}
 
   ngOnInit() {
@@ -25,5 +25,9 @@ export class RecipeListComponent implements OnInit {
 
   toggleRecipe(i) {
     this.recipeData[i].shouldBeVisible = !this.recipeData[i].shouldBeVisible;
+  }
+
+  toggleHeart(i) {
+    this.recipeApiService.toggleHeart(i);
   }
 }
