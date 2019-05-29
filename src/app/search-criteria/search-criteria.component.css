@@ -15,9 +15,9 @@
 }
 
 img {
-  margin-top: 20px;
-  width: 90%;
-  height: 450px;
+  margin-top: 30px;
+  width: 80%;
+  height: 400px;
   box-shadow: 5px 5px 5px grey;
 }
 
@@ -87,7 +87,7 @@ button {
 }
 
 recipe-list {
-  margin-top: 50px;
+  margin-top: 30px;
   display: flex;
   flex-direction: row;
   width: 100%;
@@ -95,7 +95,7 @@ recipe-list {
   align-items: center;
 }
 
-button {
+/* button {
   margin-top: 20px;
   width: 80%;
   height: 10%;
@@ -113,4 +113,4 @@ recipe-list {
   width: 100%;
   justify-content: center;
   align-items: center;
-}
+} */

@@ -2,34 +2,8 @@
   <div *ngFor="let favorite of favoriteRecipe; index as i">
     <!-- <recipe [recipe]="recipe" (onFavoriteRecipe)="favoriteRecipe($event)">
     </recipe> -->
-<<<<<<< HEAD
-    <p class="label">{{ favorite.recipe.label }}</p>
-    <i (click)="deleteFromFavorites(i, favorite.recipe.label)" [ngClass]="{ redHeart: favorite.clickedHeart }" class="material-icons">favorite</i>
-    <img (click)="toggleFavorite(i)" src="{{ favorite.recipe.image }}" alt="" />
+    <p class = "label">{{ favorite.recipe.label }}   <i (click)="deleteFromFavorites(i, favorite.recipe.label)" [ngClass]="{ redHeart: favorite.clickedHeart }" class="material-icons" >favorite</i></p>
 
-    <div class="popup" *ngIf="favorite.shouldBeVisible">
-      <p class="label">{{ favorite.recipe.label }}</p>
-
-      <div *ngIf="favorite.shouldBeVisible">
-        <p>Calories: {{ favorite.recipe.calories | number: "1.0-0" }}</p>
-        <p>Ingredients:</p>
-        <ul>
-          <li *ngFor="let ingredient of favorite.recipe.ingredientLines">
-            {{ ingredient }}
-          </li>
-        </ul>
-        <p>Dietary Restrictions:</p>
-        <p>{{ favorite.recipe.healthLabels[0] }}</p>
-        <p>{{ favorite.recipe.healthLabels[1] }}</p>
-        <p>{{ favorite.recipe.healthLabels[2] }}</p>
-        <p>{{ favorite.recipe.healthLabels[3] }}</p>
-        <a href="{{ favorite.recipe.url }}">Get the full reciepe here!</a>
-      </div>
-    </div>
-  </div>
-=======
-    <p class = "label">{{ favorite.recipe.label }}</p>
-  <i (click)="deleteFromFavorites(i)"class="material-icons">favorite</i>
   <img (click)="toggleFavorite(i)" src="{{ favorite.recipe.image }}" alt="" />
   <a href="{{ favorite.recipe.url }}">Get the full reciepe here!</a>
  
@@ -46,11 +20,8 @@
     <p>{{ favorite.recipe.healthLabels[1] }}</p>
     <p>{{ favorite.recipe.healthLabels[2] }}</p>
     <p>{{ favorite.recipe.healthLabels[3] }}</p>
-   
-    
   </div>  
 </div>
->>>>>>> styling
 </section>
 <!-- <div *ngFor="let favorite of favoriteRecipe">
   <p>{{ favorite.recipe.label }}</p>
