@@ -10,7 +10,7 @@ export class RecipeListComponent implements OnInit {
   @Input() recipeData: any[];
   @Input() favoriteRecipe: any[];
   shouldBeVisible: boolean = false;
-  // @Output() onAddToFavorite = new EventEmitter<any>();
+  @Input() clickedHeart: boolean;
   constructor(private recipeApiService: RecipeApiService) {}
 
   ngOnInit() {
@@ -18,12 +18,17 @@ export class RecipeListComponent implements OnInit {
   }
 
   // changed parameter to favRecipe which is an object
-  addToFavorites(favRecipe): void {
+  addToFavorites(favRecipe, i): void {
     this.favoriteRecipe = this.recipeApiService.addToFavorite(favRecipe);
+    this.recipeApiService.toggleHeart(i);
     console.log(this.favoriteRecipe);
   }
 
   toggleRecipe(i) {
     this.recipeData[i].shouldBeVisible = !this.recipeData[i].shouldBeVisible;
   }
+
+  // toggleHeart(i) {
+  //   this.recipeApiService.toggleHeart(i);
+  // }
 }

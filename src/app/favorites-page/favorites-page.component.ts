@@ -9,6 +9,7 @@ import { RecipeApiService } from "../recipe-api.service";
 export class FavoritesPageComponent implements OnInit {
   favoriteRecipe: any[] = [];
   shouldBeVisible: boolean = false;
+  @Input() clickedHeart: boolean;
 
   constructor(private recipeApiService: RecipeApiService) {}
 
@@ -21,9 +22,11 @@ export class FavoritesPageComponent implements OnInit {
       .shouldBeVisible;
   }
 
-  deleteFromFavorites(index: number) {
-    console.log(index);
-    this.recipeApiService.deleteFromFavorites(index);
-    this.favoriteRecipe.splice(index, 1);
+  deleteFromFavorites(index: number, favoriteLabel: string) {
+    // console.log(favoriteLabel);
+    this.recipeApiService.untoggleHeart(favoriteLabel);
+    this.favoriteRecipe = this.recipeApiService.deleteFromFavorites(index);
+    // this.favoriteRecipe.splice(index, 1);
   } 
+
 }

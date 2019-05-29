@@ -11,11 +11,10 @@ export class RecipeApiService {
   searchTermUrl: string;
   caloriesUrl: string;
   dietUrl: string;
-
   favoriteRecipe: any[] = [];
-
   recipeData: any[] = [];
 
+  clickedHeart: boolean = false;
   constructor(private http: HttpClient) {}
 
   // getEdamamData(searchTerm, caloriesMin, caloriesMax, diet) {
@@ -61,7 +60,7 @@ export class RecipeApiService {
         .then(response => {
           this.recipeData = response["hits"];
           this.recipeData = this.recipeData.map(recipe => {
-            return { ...recipe, shouldBeVisible: false };
+            return { ...recipe, shouldBeVisible: false, clickedHeart: false };
           });
           console.log(this.recipeData);
           return this.recipeData;
@@ -73,7 +72,7 @@ export class RecipeApiService {
         .then(response => {
           this.recipeData = response["hits"];
           this.recipeData = this.recipeData.map(recipe => {
-            return { ...recipe, shouldBeVisible: false };
+            return { ...recipe, shouldBeVisible: false, clickedHeart: false };
           });
           console.log(this.recipeData);
           return this.recipeData;
@@ -85,7 +84,7 @@ export class RecipeApiService {
         .then(response => {
           this.recipeData = response["hits"];
           this.recipeData = this.recipeData.map(recipe => {
-            return { ...recipe, shouldBeVisible: false };
+            return { ...recipe, shouldBeVisible: false, clickedHeart: false };
           });
           console.log(this.recipeData);
           return this.recipeData;
@@ -101,7 +100,7 @@ export class RecipeApiService {
         .then(response => {
           this.recipeData = response["hits"];
           this.recipeData = this.recipeData.map(recipe => {
-            return { ...recipe, shouldBeVisible: false };
+            return { ...recipe, shouldBeVisible: false, clickedHeart: false };
           });
           console.log(this.recipeData);
           return this.recipeData;
@@ -121,12 +120,34 @@ export class RecipeApiService {
     this.favoriteRecipe.push(newFavorite);
     // console.log(newFavorite);
     return this.favoriteRecipe;
+    
   }
 
   deleteFromFavorites(index) {
+    // console.log(this.recipeData[index].recipe.label)
     this.favoriteRecipe.splice(index, 1);
+    return this.favoriteRecipe;
   }
 
+  toggleHeart(i) {
+    // this.clickedHeart = !this.clickedHeart;
+    // this.recipeData[i].clickedHeart = !this.recipeData[i].clickedHeart;
+    this.recipeData[i].clickedHeart = true;
+    // console.log(this.clickedHeart);
+    console.log(this.recipeData[i].clickedHeart);
+    // return this.clickedHeart;
+  }
+
+  untoggleHeart(favoriteLabel) {
+    for (let i = 0; i < this.recipeData.length; i++){
+      if (favoriteLabel === this.recipeData[i].recipe.label) {
+        // console.log(this.recipeData[i].label);
+        this.recipeData[i].clickedHeart = false;
+        return this.recipeData;
+        
+      }
+    }
+  }
   // searchRecipe(form) {
   //   console.log(form.value);
   //   this.recipeApiService.getEdamamData(form.value).subscribe(response => {
