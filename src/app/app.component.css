@@ -24,13 +24,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid #00a7c4;
-  width: 120px;
-  height: 50px;
-  background-color: #00a7c4;
   margin-top: 5px;
-  box-shadow: 5px 5px 5px grey;
-  
 }
 
 a {
@@ -42,4 +36,16 @@ a {
   font-family: "Julius Sans One", sans-serif;
   font-size: 50px;
   margin-left: 50px;
+}
+
+.active {
+  margin-top: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00a7c4;
+  border: 1px solid #00a7c4;
+  box-shadow: 5px 5px 5px grey;
+  width: 120px;
+  height: 50px;
 }
