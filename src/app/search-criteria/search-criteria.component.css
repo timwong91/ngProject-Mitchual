@@ -50,7 +50,7 @@ form {
   display: flex;
   flex-direction: row;
   width: 80%;
-  justify-content: space-around;
+  justify-content: center;
   margin-top: 20px;
 }
 
@@ -65,10 +65,16 @@ form {
 
 input {
   width: 65px;
+  margin-right: 5px;
+}
+
+label {
+  font-size: 15px;
+  margin-right:5px;
 }
 
 .diet {
-  width: 90px;
+  width: 120-px;
 }
 
 button {
