@@ -28,7 +28,7 @@ export class SearchCriteriaComponent implements OnInit {
       });
   }
 
-  deleteFromFavorites(index: number) {
-    this.recipeData.splice(index, 1);
-  }
+  // deleteFromFavorites(index: number) {
+  //   this.recipeData.splice(index, 1);
+  // }
 }

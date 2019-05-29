@@ -136,6 +136,10 @@ export class RecipeApiService {
     console.log(this.recipeData[i].clickedHeart);
     // return this.clickedHeart;
   }
+
+  untoggleHeart(i) {
+    this.recipeData[i].clickedHeart = false;
+  }
   // searchRecipe(form) {
   //   console.log(form.value);
   //   this.recipeApiService.getEdamamData(form.value).subscribe(response => {
