@@ -27,4 +27,8 @@ searchRecipe(form): void {
       this.recipeData = response;
     });
 }
+
+deleteFromFavorites(index: number) {
+  this.recipeData.splice(index, 1);
+}
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { RecipeApiService } from "../recipe-api.service";
 
 @Component({
@@ -20,7 +20,9 @@ export class FavoritesPageComponent implements OnInit {
     this.favoriteRecipe[i].shouldBeVisible = !this.favoriteRecipe[i].shouldBeVisible;
   }
 
-  deleteFromFavorites(i) {
-    this.favoriteRecipe = this.recipeApiService.deleteFromFavorites[i];
-  }
+  deleteFromFavorites(index: number) {
+    console.log(index);
+    this.recipeApiService.deleteFromFavorites(index);
+    this.favoriteRecipe.splice(index, 1);
+  } 
 }
