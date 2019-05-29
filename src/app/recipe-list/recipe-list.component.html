@@ -13,7 +13,7 @@
   </recipe> -->
     <img (click)="toggleRecipe(i)" src="{{ recipe.recipe.image }}" alt="" />
     <!-- <p>{{ recipe.recipe.label }}</p> -->
-    <div *ngIf="recipe.shouldBeVisible">
+    <div class="popup" (click)="toggleRecipe(i)" *ngIf="recipe.shouldBeVisible">
       <p>Calories: {{ recipe.recipe.calories | number: "1.0-0" }}</p>
       <p>Ingredients:</p>
       <ul>

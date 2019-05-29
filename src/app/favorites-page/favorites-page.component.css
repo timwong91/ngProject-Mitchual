@@ -12,10 +12,17 @@ img {
   
 }
 
-p {
+p , li{
     font-family: "Julius Sans One", sans-serif;
-    font-size: 15px;
+    font-size: 18px;
     margin-top: 5px;
+    color: white;
+    text-align: center;
+}
+
+.label {
+    color: black;
+    font-size: 25px;
 }
 
 div {
@@ -35,29 +42,30 @@ div {
     font-weight: bold;
 }
 
+i {
+    margin-left: 200px;
+    cursor: pointer;
+}
+
 a {
     font-family: "Julius Sans One", sans-serif;
     font-size: 15px;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
-.label {
-    font-size: 25px;
-}
-
-i {
-    margin-left: 200px;
-
-}
 
 .popup {
     position: absolute;
-    background-color: lightgrey;
+    background-color: #00a7c4;
     box-shadow: 5px 5px 5px grey;
     height: 400px;
     width: 400px;
+<<<<<<< HEAD
 }
 
 .redHeart {
     color: red;
+=======
+    opacity: 0.9;
+>>>>>>> styling
 }
